@@ -1,0 +1,33 @@
+.item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: #8f8f98;
+  text-align: left;
+}
+
+.item[data-active='true'] {
+  background: rgba(84, 197, 200, 0.14);
+  color: #d8fbfc;
+}
+
+.label {
+  font-size: 0.95rem;
+}
+
+.count {
+  min-width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.8125rem;
+}

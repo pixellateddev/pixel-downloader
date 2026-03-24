@@ -10,11 +10,14 @@
     "beforeBuildCommand": "bun --cwd ../client build"
   },
   "app": {
+    "macOSPrivateApi": true,
     "windows": [
       {
         "title": "Pixel Downloader",
         "width": 800,
         "height": 600,
+        "decorations": false,
+        "transparent": true,
         "resizable": true,
         "fullscreen": false
       }

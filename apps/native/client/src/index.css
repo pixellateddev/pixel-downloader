@@ -6,7 +6,7 @@
   line-height: 1.5;
   font-weight: 400;
   color: #f5f5f5;
-  background: #101012;
+  background: transparent;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,11 +22,13 @@
 html,
 body,
 #root {
-  min-height: 100vh;
+  height: 100%;
 }
 
 body {
   margin: 0;
+  overflow: hidden;
+  background: transparent;
 }
 
 button,

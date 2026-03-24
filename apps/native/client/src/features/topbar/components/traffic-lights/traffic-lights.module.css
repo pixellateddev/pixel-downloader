@@ -1,0 +1,25 @@
+.lights {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.light {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.22);
+}
+
+.light[data-tone='close'] {
+  background: #ff5f57;
+}
+
+.light[data-tone='minimize'] {
+  background: #febc2e;
+}
+
+.light[data-tone='maximize'] {
+  background: #28c840;
+}
