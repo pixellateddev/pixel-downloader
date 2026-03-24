@@ -1,0 +1,42 @@
+.shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 32px;
+  background:
+    radial-gradient(circle at top, rgba(84, 197, 200, 0.14), transparent 38%),
+    linear-gradient(180deg, #161618 0%, #101012 100%);
+}
+
+.greeting-card {
+  width: min(100%, 560px);
+  padding: 32px;
+  border: 1px solid rgba(113, 113, 122, 0.22);
+  border-radius: 24px;
+  background: rgba(28, 28, 31, 0.88);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.32);
+}
+
+.greeting-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #54c5c8;
+}
+
+.greeting-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1;
+  color: #f5f5f5;
+}
+
+.greeting-copy {
+  margin: 16px 0 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #b2b2bb;
+}
