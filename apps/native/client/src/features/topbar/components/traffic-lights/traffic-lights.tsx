@@ -17,7 +17,9 @@ export function TrafficLights({ lights, onPress }: TrafficLightsProps) {
           key={light.id}
           onClick={() => onPress(light.id)}
           type="button"
-        />
+        >
+          <span className={styles.icon} data-tone={light.id} aria-hidden="true" />
+        </button>
       ))}
     </div>
   )

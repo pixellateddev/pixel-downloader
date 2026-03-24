@@ -1,22 +1,14 @@
 import { DownloadList } from '../../features/downloads/components/download-list'
-import { DownloadsHeader } from '../../features/downloads/components/downloads-header'
 import { DownloadSearch } from '../../features/downloads/components/download-search'
 import { Sidebar } from '../../features/sidebar/components/sidebar'
 import { StatusBar } from '../../features/status-bar/components/status-bar'
 import { Topbar } from '../../features/topbar/components/topbar'
 import styles from './app-shell.module.css'
-import { runTrafficLightAction } from '../../lib/tauri-window'
 import type { DownloadItem } from '../../features/downloads/lib/download-list'
-import type {
-  DownloadSearch as DownloadSearchType,
-  DownloadsSummary,
-} from '../../features/downloads/lib/downloads-header'
+import type { DownloadSearch as DownloadSearchType } from '../../features/downloads/lib/downloads-header'
 import type { SidebarFilter } from '../../features/sidebar/lib/sidebar-filters'
 import type { StatusBarSummary } from '../../features/status-bar/lib/status-bar'
-import type {
-  TopbarAction,
-  TrafficLight,
-} from '../../features/topbar/lib/topbar'
+import type { TopbarAction } from '../../features/topbar/lib/topbar'
 
 const sidebarFilters: SidebarFilter[] = [
   { id: 'all', label: 'All', count: 6, isActive: true },
@@ -35,11 +27,6 @@ const statusBarSummary: StatusBarSummary = {
 const downloadSearch: DownloadSearchType = {
   placeholder: 'Filter by name or URL...',
   value: '',
-}
-
-const downloadsSummary: DownloadsSummary = {
-  activeFilterLabel: 'All Downloads',
-  itemCount: 6,
 }
 
 const downloadItems: DownloadItem[] = [
@@ -140,12 +127,6 @@ const downloadItems: DownloadItem[] = [
   },
 ]
 
-const trafficLights: TrafficLight[] = [
-  { id: 'close', label: 'Close window' },
-  { id: 'minimize', label: 'Minimize window' },
-  { id: 'maximize', label: 'Maximize window' },
-]
-
 const topbarActions: TopbarAction[] = [
   { id: 'add-url', label: 'Add URL', tone: 'primary' },
   { id: 'pause-all', label: 'Pause', tone: 'warning' },
@@ -158,13 +139,7 @@ export function AppShell() {
     <main className={styles.shell}>
       <div className={styles.windowFrame}>
         <header className={styles.topbar}>
-          <Topbar
-            actions={topbarActions}
-            onTrafficLightPress={(light) => {
-              void runTrafficLightAction(light)
-            }}
-            trafficLights={trafficLights}
-          />
+          <Topbar actions={topbarActions} />
         </header>
 
         <aside className={styles.sidebar}>
@@ -175,7 +150,6 @@ export function AppShell() {
           <section className={styles.contentScroll}>
             <div className={styles.contentChrome}>
               <DownloadSearch search={downloadSearch} />
-              <DownloadsHeader summary={downloadsSummary} />
             </div>
 
             <section className={styles.content}>

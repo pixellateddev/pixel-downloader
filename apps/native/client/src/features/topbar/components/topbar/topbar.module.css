@@ -5,10 +5,14 @@
   gap: 16px;
 }
 
-.controls,
-.actions {
+.actions,
+.native-controls-spacer {
   display: inline-flex;
   align-items: center;
+}
+
+.native-controls-spacer {
+  min-width: 104px;
 }
 
 @media (max-width: 700px) {
