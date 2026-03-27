@@ -18,7 +18,7 @@ Run commands from the repository root unless noted.
 - `bun run dev`: start the native app via Turbo.
 - `bun run build`: run all workspace build tasks.
 - `bun run lint`: run package lint scripts across the workspace.
-- `bun run check-types`: run TypeScript checks where configured.
+- `bun run check-types`: run TypeScript checks across the client and host workspaces.
 - `bun --cwd apps/native/host run dev`: run the Tauri host only.
 
 ## Coding Style & Naming Conventions
@@ -42,6 +42,10 @@ There is no committed automated test suite yet. Until one is added:
 - smoke-test the native shell with `bun run dev`
 
 When adding tests, place them near the feature they cover and use `*.test.ts` or `*.test.tsx`. Prioritize downloader, scheduler, bridge, and storage logic.
+
+## Git Hooks
+
+Lefthook is configured at the repository root. The current `pre-commit` hook runs Biome on staged files and runs `bun run check-types` in parallel. Keep pre-commit tasks fast and focused; if heavier checks are added later, prefer moving them to a future `pre-push` hook.
 
 ## Commit & Pull Request Guidelines
 
