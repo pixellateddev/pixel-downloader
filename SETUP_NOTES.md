@@ -209,3 +209,79 @@ The first successful milestone for this rebuild is:
 - the native app builds
 
 Do not start migrating downloader logic before that milestone is complete.
+
+## Implementation Checklist
+
+Assumption for the next phase:
+
+- `bun run dev` works for the native shell
+
+Recommended order after the native shell milestone:
+
+### 1. Shared Types
+
+- [ ] Create `packages/types`
+- [ ] Add `packages/types/package.json`
+- [ ] Add `packages/types/index.ts`
+- [ ] Port the shared type shapes from `../pxdl/packages/types/index.ts`
+- [ ] Rename package usage to `@pixel/types`
+
+Initial types to include:
+
+- [ ] `DownloadTask`
+- [ ] `SegmentTask`
+- [ ] `ProbeResult`
+- [ ] `DaemonConfig`
+- [ ] `NewDownload`
+
+### 2. Minimal Daemon App
+
+- [ ] Create `apps/daemon`
+- [ ] Add `apps/daemon/package.json`
+- [ ] Add `apps/daemon/tsconfig.json`
+- [ ] Add `apps/daemon/src/index.ts`
+- [ ] Add `dev`, `build`, `check-types`, `lint`, and `format` scripts
+
+### 3. Minimal Read-Only API
+
+- [ ] Implement `GET /status`
+- [ ] Implement `GET /events`
+- [ ] Implement `GET /config`
+- [ ] Implement `POST /config`
+- [ ] Use in-memory mock data first
+- [ ] Keep SSE updates simple and stable
+
+Do not port the real scheduler or downloader engine yet.
+
+### 4. Client Data Flow
+
+- [ ] Add a client store in `apps/native/client/src/store`
+- [ ] Add a shared API base constant for the daemon URL
+- [ ] Fetch task data from `/status`
+- [ ] Subscribe to `/events`
+- [ ] Fetch config from `/config`
+- [ ] Replace hardcoded task arrays in `app-shell.tsx`
+
+### 5. UI Wiring
+
+- [ ] Derive sidebar counts from live tasks
+- [ ] Render the download list from daemon data
+- [ ] Derive status bar summary from daemon data
+- [ ] Keep the current shell layout, but remove mock-only state
+
+### 6. Write Actions
+
+- [ ] Implement `POST /add`
+- [ ] Implement `POST /pause`
+- [ ] Implement `POST /resume`
+- [ ] Implement `POST /clear-completed`
+- [ ] Wire topbar and row actions to those endpoints
+
+### 7. Backend Migration After the Slice Works
+
+- [ ] Add `packages/utils`
+- [ ] Add `packages/core`
+- [ ] Port persistent config and storage
+- [ ] Port scheduler logic
+- [ ] Port downloader logic
+- [ ] Add `apps/bridge` only if browser integration remains in scope
