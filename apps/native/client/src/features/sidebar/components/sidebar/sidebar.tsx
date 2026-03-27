@@ -1,6 +1,6 @@
+import type { SidebarFilter } from '../../lib/sidebar-filters'
 import { SidebarFilterItem } from '../sidebar-filter-item'
 import styles from './sidebar.module.css'
-import type { SidebarFilter } from '../../lib/sidebar-filters'
 
 type SidebarProps = {
   filters: SidebarFilter[]

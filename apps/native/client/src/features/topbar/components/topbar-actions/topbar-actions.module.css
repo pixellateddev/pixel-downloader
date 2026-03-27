@@ -19,16 +19,16 @@
   font-weight: 600;
 }
 
-.button[data-tone='primary'] {
+.button[data-tone="primary"] {
   color: #54c5c8;
   border-color: rgba(84, 197, 200, 0.24);
   background: rgba(84, 197, 200, 0.08);
 }
 
-.button[data-tone='warning'] {
+.button[data-tone="warning"] {
   color: #f1b74e;
 }
 
-.button[data-tone='danger'] {
+.button[data-tone="danger"] {
   color: #ff7d74;
 }

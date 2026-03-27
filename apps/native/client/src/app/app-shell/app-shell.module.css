@@ -3,8 +3,7 @@
   height: 100vh;
   padding: 0;
   border-radius: 18px;
-  background:
-    radial-gradient(circle at top, rgba(84, 197, 200, 0.08), transparent 42%);
+  background: radial-gradient(circle at top, rgba(84, 197, 200, 0.08), transparent 42%);
   overflow: hidden;
 }
 
@@ -14,9 +13,9 @@
   grid-template-columns: 260px minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr) auto;
   grid-template-areas:
-    'topbar topbar'
-    'sidebar main'
-    'footer footer';
+    "topbar topbar"
+    "sidebar main"
+    "footer footer";
   overflow: hidden;
   border: 1px solid rgba(113, 113, 122, 0.14);
   border-radius: inherit;
@@ -102,10 +101,10 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-      'topbar'
-      'sidebar'
-      'main'
-      'footer';
+      "topbar"
+      "sidebar"
+      "main"
+      "footer";
   }
 
   .sidebar {

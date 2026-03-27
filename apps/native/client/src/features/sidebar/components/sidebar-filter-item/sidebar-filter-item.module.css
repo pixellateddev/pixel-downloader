@@ -12,7 +12,7 @@
   text-align: left;
 }
 
-.item[data-active='true'] {
+.item[data-active="true"] {
   background: rgba(84, 197, 200, 0.14);
   color: #d8fbfc;
 }

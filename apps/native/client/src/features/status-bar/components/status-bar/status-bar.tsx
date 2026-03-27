@@ -1,5 +1,5 @@
-import styles from './status-bar.module.css'
 import type { StatusBarSummary } from '../../lib/status-bar'
+import styles from './status-bar.module.css'
 
 type StatusBarProps = {
   summary: StatusBarSummary
@@ -12,17 +12,14 @@ export function StatusBar({ summary }: StatusBarProps) {
         <span className={styles.metric}>
           <span className={styles.label}>{summary.speedLabel}</span>
         </span>
-        <span className={styles.divider} aria-hidden="true" />
+        <span className={styles.divider} aria-hidden='true' />
         <span className={styles.metric}>
           <span className={styles.label}>{summary.activeCount} active</span>
         </span>
       </div>
 
-      <div
-        className={styles.presence}
-        data-state={summary.connectionState}
-      >
-        <span className={styles.dot} aria-hidden="true" />
+      <div className={styles.presence} data-state={summary.connectionState}>
+        <span className={styles.dot} aria-hidden='true' />
         <span className={styles.label}>{summary.connectionState}</span>
       </div>
     </div>

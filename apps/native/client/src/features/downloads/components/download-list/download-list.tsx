@@ -1,6 +1,6 @@
+import type { DownloadItem } from '../../lib/download-list'
 import { DownloadRow } from '../download-row'
 import styles from './download-list.module.css'
-import type { DownloadItem } from '../../lib/download-list'
 
 type DownloadListProps = {
   items: DownloadItem[]

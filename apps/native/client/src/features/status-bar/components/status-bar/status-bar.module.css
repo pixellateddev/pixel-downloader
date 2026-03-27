@@ -36,7 +36,7 @@
   box-shadow: 0 0 12px rgba(125, 225, 138, 0.45);
 }
 
-.presence[data-state='offline'] .dot {
+.presence[data-state="offline"] .dot {
   background: #f28b82;
   box-shadow: 0 0 12px rgba(242, 139, 130, 0.35);
 }

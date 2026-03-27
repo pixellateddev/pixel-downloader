@@ -65,7 +65,7 @@
 }
 
 .meta > span:not(.status-badge)::before {
-  content: '•';
+  content: "•";
   margin-right: 10px;
   color: rgba(143, 143, 152, 0.5);
 }
@@ -88,17 +88,17 @@
   text-transform: uppercase;
 }
 
-.status-badge[data-status='downloading'] {
+.status-badge[data-status="downloading"] {
   background: rgba(84, 197, 200, 0.14);
   color: #7ddfe2;
 }
 
-.status-badge[data-status='complete'] {
+.status-badge[data-status="complete"] {
   background: rgba(125, 225, 138, 0.14);
   color: #86e691;
 }
 
-.status-badge[data-status='paused'] {
+.status-badge[data-status="paused"] {
   background: rgba(247, 183, 80, 0.14);
   color: #f1b74e;
 }
@@ -117,7 +117,7 @@
 }
 
 .progress-meta > span + span::before {
-  content: '•';
+  content: "•";
   margin-right: 10px;
   color: rgba(143, 143, 152, 0.5);
 }

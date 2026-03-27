@@ -1,14 +1,14 @@
 import { DownloadList } from '../../features/downloads/components/download-list'
 import { DownloadSearch } from '../../features/downloads/components/download-search'
-import { Sidebar } from '../../features/sidebar/components/sidebar'
-import { StatusBar } from '../../features/status-bar/components/status-bar'
-import { Topbar } from '../../features/topbar/components/topbar'
-import styles from './app-shell.module.css'
 import type { DownloadItem } from '../../features/downloads/lib/download-list'
 import type { DownloadSearch as DownloadSearchType } from '../../features/downloads/lib/downloads-header'
+import { Sidebar } from '../../features/sidebar/components/sidebar'
 import type { SidebarFilter } from '../../features/sidebar/lib/sidebar-filters'
+import { StatusBar } from '../../features/status-bar/components/status-bar'
 import type { StatusBarSummary } from '../../features/status-bar/lib/status-bar'
+import { Topbar } from '../../features/topbar/components/topbar'
 import type { TopbarAction } from '../../features/topbar/lib/topbar'
+import styles from './app-shell.module.css'
 
 const sidebarFilters: SidebarFilter[] = [
   { id: 'all', label: 'All', count: 6, isActive: true },
