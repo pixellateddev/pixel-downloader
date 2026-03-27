@@ -1,4 +1,4 @@
-export type DownloadStatus = 'downloading' | 'complete' | 'paused'
+export type DownloadStatus = 'downloading' | 'complete' | 'paused' | 'queued' | 'failed'
 
 export type DownloadAction = {
   id: string

@@ -11,8 +11,8 @@ export function DownloadSearch({ search }: DownloadSearchProps) {
       <span className={styles.icon} aria-hidden='true' />
       <input
         className={styles.input}
+        onChange={(event) => search.onChange(event.target.value)}
         placeholder={search.placeholder}
-        readOnly
         type='text'
         value={search.value}
       />

@@ -103,6 +103,16 @@
   color: #f1b74e;
 }
 
+.status-badge[data-status="queued"] {
+  background: rgba(137, 145, 158, 0.16);
+  color: #bcc2cb;
+}
+
+.status-badge[data-status="failed"] {
+  background: rgba(224, 92, 92, 0.14);
+  color: #ef8a8a;
+}
+
 .progress {
   display: grid;
   gap: 8px;
