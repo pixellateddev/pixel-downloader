@@ -1,0 +1,16 @@
+pre-commit:
+  parallel: true
+  commands:
+    biome:
+      glob:
+        - "*.ts"
+        - "*.tsx"
+        - "*.js"
+        - "*.jsx"
+        - "*.css"
+        - "*.json"
+      run: bunx biome check --write {staged_files}
+      stage_fixed: true
+
+    types:
+      run: bun run check-types
